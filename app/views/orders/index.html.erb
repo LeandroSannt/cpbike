@@ -7,11 +7,11 @@
   <thead>
     <tr>
       <th>Pedido</th>
-      <th>Valor</th>
-      <th>Descricao</th>
-      <th>Telefone cliente</th>
       <th>Nome cliente</th>
-      <th>Prazo conclusao</th>
+      <th>Telefone cliente</th>
+      <th>Entrada</th>
+      <th>Saida</th>
+      <th>Valor</th>
       <th>Situacao</th>
       <th>Finalizar Serviço</th>
       <th colspan="4"></th>
@@ -22,11 +22,11 @@
     <% @orders.each do |order| %>
       <tr class="">
         <td><%= order.id %></td>
-        <td><%= order.valor %></td>
-        <td><%= order.descricao %></td>
-        <td><%= order.telefone_cliente %></td>
         <td><%= order.nome_cliente %></td>
-        <td><%= order.prazo_conclusao %></td>
+        <td><%= order.telefone_cliente %></td>
+        <td><%= l(order.prazo_entrada, formats: :casual, locale: :'pt-BR', default: '-') %></td>
+        <td><%= l(order.prazo_conclusao, formats: :casual, locale: :'pt-BR', default: '-') %></td>
+        <td><%= number_to_currency(order.valor) %></td>
         <% if order.situacao == false%>
         
 

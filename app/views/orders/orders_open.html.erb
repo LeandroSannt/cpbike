@@ -6,10 +6,9 @@
   <thead>
     <tr>
       <th>Pedido</th>
-      <th>Descricao</th>
-      <th>Telefone cliente</th>
-      <th>Nome cliente</th>
+      <th>Modelo da bicicleta</th>
       <th>Prazo conclusao</th>
+      <th>Serviço</th>
       <th>Situacao</th>
       <th colspan="4"></th>
     </tr>
@@ -19,10 +18,9 @@
     <% @orders_open.each do |order| %>
       <tr class="">
         <td><%= order.id %></td>
+        <td><%= order.modelo_bike %></td>
+        <td><%= l(order.prazo_conclusao, formats: :casual, locale: :'pt-BR', default: '-') %></td>
         <td><%= order.descricao %></td>
-        <td><%= order.telefone_cliente %></td>
-        <td><%= order.nome_cliente %></td>
-        <td><%= order.prazo_conclusao %></td>
         <% if order.situacao == false%>
         <td style="color:rgb(17, 66, 26);background-color:rgb(53, 207, 25);padding:10px;border-radius:10px;display:flex;align-itens:center;justify-content:center" class="emAndamento">Concluido</td> 
         <%else%>

@@ -16,32 +16,54 @@
 
 <div class="x_content d-flex d-flex justify-content-center align-items-center flex-column">
 
-  <div class="col-md-6 col-sm-6 form-group ">
-    <%= form.label :valor %>
-    <%= form.text_field :valor , class:"form-control" %>
+  <div class="row col-md-12">
+    <div class="col-md-6 col-sm-6 form-group ">
+      <%= form.label :nome_do_cliente %>
+      <%= form.text_field :nome_cliente, class:"form-control" %>
+    </div>
+
+    <div class="col-md-6 col-sm-6 form-group ">
+      <%= form.label :telefone_do_cliente %>
+      <%= form.text_field :telefone_cliente , class:"form-control"%>
+    </div>
   </div>
 
+  <div class="row col-md-12">
+    <div class="col-md-6 col-sm-6 form-group ">
+      <%= form.label :entrada %>
+      <%= form.datetime_field :prazo_entrada, class: 'form-control' %>
+    </div>  
 
-  <div class="col-md-6 col-sm-6 form-group ">
-    <%= form.label :descricao %>
-    <%= form.text_area :descricao , class:"form-control"%>
+    <div class="col-md-6 col-sm-6 form-group ">
+      <%= form.label :saida %>
+      <%= form.datetime_field :prazo_conclusao, class: 'form-control' %>
+    </div> 
   </div>
 
-  <div class="col-md-6 col-sm-6 form-group ">
-    <%= form.label :telefone_cliente %>
-    <%= form.text_field :telefone_cliente , class:"form-control"%>
-  </div>
+    <div class="row col-md-12">
+      <div class="col-md-4 col-sm-6 form-group ">
+        <%= form.label :assessoria %>
+        <%= form.text_field :assessoria , class:"form-control"%>
+      </div>
 
-  <div class="col-md-6 col-sm-6 form-group ">
-    <%= form.label :nome_cliente %>
-    <%= form.text_field :nome_cliente, class:"form-control" %>
-  </div>
+      <div class="col-md-4 col-sm-6 form-group ">
+        <%= form.label :modelo_bike %>
+        <%= form.text_field :modelo_bike , class:"form-control"%>
+      </div>
 
-  <div class="col-md-6 col-sm-6 form-group ">
-    <%= form.label :prazo_conclusao %>
-    <%= form.text_field :prazo_conclusao , class:"form-control"%>
+      <div class="col-md-4 col-sm-6 form-group ">
+        <%= form.label :valor_do_serviço %>
+        <%= form.text_field :valor , class:"form-control" %>
+      </div>
   </div>  
 
+  <div class=" row col-md-12">
+    <div class="col-md-12 col-sm-12 form-group ">
+      <%= form.label :serviço %>
+      <%= form.text_area :descricao , class:"form-control"%>
+    </div>
+  </div>
+  
   <% if  not @order.new_record?%>
 
    <div class="row col-md-6">

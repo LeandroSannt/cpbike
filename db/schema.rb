@@ -10,18 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_181917) do
+ActiveRecord::Schema.define(version: 2021_07_21_204310) do
 
   create_table "orders", force: :cascade do |t|
     t.string "pedido"
-    t.float "valor"
+    t.integer "valor"
     t.text "descricao"
     t.string "telefone_cliente"
     t.string "nome_cliente"
-    t.string "prazo_conclusao"
-    t.boolean "situacao"
+    t.datetime "prazo_conclusao"
+    t.boolean "situacao", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "prazo_entrada"
+    t.string "modelo_bike"
+    t.string "assessoria"
   end
 
   create_table "users", force: :cascade do |t|
