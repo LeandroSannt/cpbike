@@ -17,8 +17,17 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <%#= f.text_field :email,id:"login",class:"fadeIn second", name:"login",autofocus: true, autocomplete: "email" ,placeholder:"login"%>
-               <%= f.text_field :email, autofocus: true, autocomplete: "email",placeholder:"login",class:"fadeIn second" %>
-              <%= f.text_field :password, autocomplete:"new-password", class:"fadeIn third" , placeholder:"password"%>
+                <div class="form-group col-sm-12">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: 'form-control'%>
+                </div>
+
+                 <div class="form-group col-sm-12">
+                  <%= f.label :password %><br />
+                  <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+                </div>
+               <%#= f.text_field :email, autofocus: true, autocomplete: "email",placeholder:"login",class:"fadeIn second" %>
+              <%#= f.text_field :password, autocomplete:"new-password", class:"fadeIn third" , placeholder:"password"%>
 
           <%#= f.text_field :password,id:"password", class:"fadeIn third", autocomplete: "current-password", placeholder:"password" ,name:"password"%>
 
