@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_21_214844) do
+ActiveRecord::Schema.define(version: 2021_07_21_201134) do
 
   create_table "orders", force: :cascade do |t|
     t.string "pedido"
@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 2021_07_21_214844) do
     t.text "descricao"
     t.string "telefone_cliente"
     t.string "nome_cliente"
-    t.datetime "prazo_conclusao"
     t.boolean "situacao", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "prazo_entrada"
+    t.datetime "prazo_conclusao"
     t.string "modelo_bike"
-    t.string "assessoria"
+    t.string "Assessoria"
   end
 
   create_table "users", force: :cascade do |t|

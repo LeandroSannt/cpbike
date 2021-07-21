@@ -6,7 +6,6 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.text :descricao
       t.string :telefone_cliente
       t.string :nome_cliente
-      t.string :prazo_conclusao
       t.boolean :situacao
 
       t.timestamps
