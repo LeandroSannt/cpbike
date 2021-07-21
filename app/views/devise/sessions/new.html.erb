@@ -1,23 +1,25 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="content-form">'
   <div class="wrapper fadeInDown">
+    <div id="formContent">'
 
-    <div class="fadeIn first">
-      <%= image_tag("/images/login.png", class: "", id:"icon") %>
+      <div class="fadeIn first">
+        <%= image_tag("/images/login.png", class: "", id:"icon") %>
+      </div>
+
+      <%= f.text_field :email, autofocus: true, autocomplete: "email", class: 'form-control',placeholder:"login" ,id:"login",class:"fadeIn second"%>
+
+      <%= f.password_field :password, id:"password" , class:"fadeIn third",autocomplete: "new-password" , placeholder:"password" %>
+
+      <div id="formFooter" class="flex">
+        <%= f.submit "Sign ip", class:"btn btn-primary btn-lg btn-block w-50"  %>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
-
-    <%= f.text_field :email, autofocus: true, autocomplete: "email", class: 'form-control',placeholder:"login" ,id:"login",class:"fadeIn second"%>
-
-    <%= f.text_field :password, id:"password" , class:"fadeIn third",autocomplete: "new-password" , placeholder:"password" %>
-
-    <div id="formFooter" class="flex">
-      <%= f.submit "Sign ip", class:"btn btn-primary btn-lg btn-block w-50"  %>
-      <%= render "devise/shared/links" %>
-    </div>
-
   </div>
 </div>
   <% end %>

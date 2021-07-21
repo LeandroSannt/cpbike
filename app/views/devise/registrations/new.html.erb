@@ -13,9 +13,9 @@
         <%= f.text_field :email, autofocus: true, autocomplete: "email", class: 'form-control',placeholder:"login" ,id:"login",class:"fadeIn second"%>
 
         
-        <%= f.text_field :password, id:"password" , class:"fadeIn third",autocomplete: "new-password" , placeholder:"password" %>
+        <%= f.password_field :password, id:"password" , class:"fadeIn third",autocomplete: "new-password" , placeholder:"password" %>
 
-        <%= f.text_field :password_confirmation, autocomplete: "new-password", class:"fadeIn third" , placeholder:"password-confirmation" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"fadeIn third" , placeholder:"password-confirmation" %>
 
 
         <div id="formFooter " class="flex">
