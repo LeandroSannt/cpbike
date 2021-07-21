@@ -1,0 +1,40 @@
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles --> 
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <%= image_tag("/images/login.png", class: "", id:"icon") %>
+    </div>
+
+    <!-- Login Form -->
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%#= f.text_field :email,id:"login",class:"fadeIn second", name:"login",autofocus: true, autocomplete: "email" ,placeholder:"login"%>
+               <%= f.text_field :email, autofocus: true, autocomplete: "email",placeholder:"login",class:"fadeIn second" %>
+              <%= f.text_field :password, autocomplete:"new-password", class:"fadeIn third" , placeholder:"password"%>
+              <%= f.text_field :password_confirmation, autocomplete: "new-password" , placeholder:" new-password"%>
+          <%#= f.text_field :password,id:"password", class:"fadeIn third", autocomplete: "current-password", placeholder:"password" ,name:"password"%>
+
+      <%#= f.submit "Log in" , class:"fadeIn fourth"%>
+
+   <%end%>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <%= render "devise/shared/links" %>
+
+    </div>
+
+  </div>
+</div>
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+

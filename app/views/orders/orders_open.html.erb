@@ -1,0 +1,53 @@
+
+<h1 class ="mb-5">Serviços</h1>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Pedido</th>
+      <th>Descricao</th>
+      <th>Telefone cliente</th>
+      <th>Nome cliente</th>
+      <th>Prazo conclusao</th>
+      <th>Situacao</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders_open.each do |order| %>
+      <tr class="">
+        <td><%= order.id %></td>
+        <td><%= order.descricao %></td>
+        <td><%= order.telefone_cliente %></td>
+        <td><%= order.nome_cliente %></td>
+        <td><%= order.prazo_conclusao %></td>
+        <% if order.situacao == false%>
+        <td style="color:rgb(17, 66, 26);background-color:rgb(53, 207, 25);padding:10px;border-radius:10px;display:flex;align-itens:center;justify-content:center" class="emAndamento">Concluido</td> 
+        <%else%>
+        <td style="color:rgb(85, 85, 18);background-color:rgb(186, 197, 28);border-radius:10px;display:flex;align-itens:center;justify-content:center" class="emAndamento">Andamento</td>
+        <%end%>
+        <td>
+          <a href='https://api.whatsapp.com/send?1=pt_BR&phone=55<%= order.telefone_cliente %>&text=Serviço concluido venha buscar retirar seu equipamento em nossa loja"' class=' dropdown-item' target='_blank' >
+            <i class="fab fa-whatsapp fa-sm fa-fw mr-2 text-gray-400"></i>
+            Whatsapp
+          </a>
+         </td>
+         <td> 
+         <% if order.situacao != false%>
+            <%= link_to orders_order_confirmation_path(id: order.id), remote: true, onclick: "", class: "btn  btn-info btn-xs" do %>
+              <i class="fas fa-check"></i>
+            <% end %>
+          <% end %>
+          </td>
+        <td><%= link_to 'Editar', edit_order_path(order) %></td>
+        <td><%= link_to 'Excluir', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+

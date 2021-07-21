@@ -1,0 +1,7 @@
+<% if @check %>
+	var result = confirm('Você tem certeza?')
+	if (result == true){
+		alert("Serviço concluido")
+		$("#order_<%= params[:id] %>").html("CONCLUIDO");
+	}
+<% end %>

@@ -1,0 +1,64 @@
+<div class="container">
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <hr class="sidebar-divider my-0 mb-4">
+
+<div class="x_content d-flex d-flex justify-content-center align-items-center flex-column">
+
+  <div class="col-md-6 col-sm-6 form-group ">
+    <%= form.label :valor %>
+    <%= form.text_field :valor , class:"form-control" %>
+  </div>
+
+
+  <div class="col-md-6 col-sm-6 form-group ">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao , class:"form-control"%>
+  </div>
+
+  <div class="col-md-6 col-sm-6 form-group ">
+    <%= form.label :telefone_cliente %>
+    <%= form.text_field :telefone_cliente , class:"form-control"%>
+  </div>
+
+  <div class="col-md-6 col-sm-6 form-group ">
+    <%= form.label :nome_cliente %>
+    <%= form.text_field :nome_cliente, class:"form-control" %>
+  </div>
+
+  <div class="col-md-6 col-sm-6 form-group ">
+    <%= form.label :prazo_conclusao %>
+    <%= form.text_field :prazo_conclusao , class:"form-control"%>
+  </div>  
+
+  <% if  not @order.new_record?%>
+
+   <div class="row col-md-6">
+    <div class="col">
+      <%= form.radio_button :situacao, 'true',autocomplete:"off" ,id:"danger-outlined",class:"btn-check", checked:true%>
+      <%= form.label "Aberto", for:"danger-outlined",class:"btn btn-outline-danger   w-100 p-3 mt-3" %>
+    </div>
+    <div class="col">
+      <%= form.radio_button :situacao, 'false',autocomplete:"off",id:"success-outlined",class:"btn-check" %>
+      <%= form.label "Concluido", for:"success-outlined",class:"btn btn-outline-success w-100 p-3 mt-3" %>
+    </div>
+  </div>
+  <%end%>
+
+  <div class="actions col-md-6 mt-3 ">
+    <%= form.submit 'Registrar', class:'btn btn-primary w-100 p-3'%>
+  </div>
+</div>
+<% end %>
+</div>
