@@ -7,7 +7,7 @@
 
 <p>
   <strong>Valor:</strong>
-  <%= @order.valor %>
+  <%= number_to_currency(order.valor) %>
 </p>
 
 <p>
@@ -29,12 +29,12 @@
 
 <p>
   <strong>Prazo conclusao:</strong>
-  <%= @order.prazo_conclusao %>
+  <%= l(order.prazo_conclusao, formats: :casual, locale: :'pt-BR', default: '-') %
 </p>
 
 <p>
   <strong>Entrada:</strong>
-  <%= @order.prazo_entrada %>
+  <%= l(order.prazo_entrada, formats: :casual, locale: :'pt-BR', default: '-') %>
 </p>
 
 <p>
